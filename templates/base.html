@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bird classification</title>
+        <link rel="icon" href="/static/assets/icon3.png" type="image/x-icon" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='styles/base.css') }}"
+        />
+    </head>
+    <body>
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-light rounded-corner"
+        >
+            <div class="container-fluid">
+                <a href="#">
+                    <img
+                        class="navbar-logo"
+                        src="../static/assets/logo.png"
+                        alt="Logo"
+                        width="88"
+                    />
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto custom-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="{{ url_for('render_index') }}"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="{{ url_for('render_YOLOv8') }}"
+                                >YOLOv8</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="{{ url_for('render_bird_classes') }}"
+                                >Bird species</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="{{ url_for('render_test_imgs') }}"
+                                >Test Images</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Document</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>{% block content %} {% endblock %}</main>
+
+        <footer class="text-center mt-auto">
+            <p>by HoangNg in {{ current_year }}</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

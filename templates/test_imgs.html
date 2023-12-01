@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block content %}
+
+<title>Image Grid</title>
+<!-- Bootstrap CSS -->
+<link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+/>
+<link href="/static/styles/styles.css" rel="stylesheet" />
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/styles.css') }}"
+/>
+
+<body>
+    <main class="content">
+        <div class="text-center">
+            <h1 class="title">Test images</h1>
+            <p>
+                <a href="/"
+                    ><span class="back-to-the-model">To prediction</span></a
+                >
+            </p>
+            <p>click on an image to download and use it to test the AI model</p>
+        </div>
+    </main>
+
+    <div class="container">
+        <div class="row">
+            {% for image_file in image_files %}
+            <div class="col-12 col-md-4">
+                <a
+                    href="{{ url_for('static', filename='test_imgs/' + image_file) }}"
+                    download="{{ image_file }}"
+                >
+                    <img
+                        src="{{ url_for('static', filename='test_imgs/' + image_file) }}"
+                        class="img-fluid image-padding"
+                        alt="{{ image_file }}"
+                        width="860"
+                    />
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}

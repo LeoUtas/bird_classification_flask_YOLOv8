@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  margin: 1.5% 2%;
+  background-color: #E5E4E2;
+  border-radius: 15px;
+}
+
+.navbar-logo {
+  padding: 0 5%;
+}
+
+.navbar-logo:hover {
+  vertical-align: middle;
+  transition: transform .3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.5);
+}
+
+.navbar a.nav-link {
+  margin: 0 8px;
+  color: #2e3138;
+  filter: brightness(80%);
+  transition: all 0.3s;
+}
+
+.navbar a.nav-link:hover {
+  transform: scale(1.5);
+  color: #141518;
+}
+
+footer {
+  margin-top: auto;
+  color: #838996;
+  padding: 1rem 0;
+}

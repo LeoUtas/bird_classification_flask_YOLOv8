@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+/>
+<link href="/static/styles/styles.css" rel="stylesheet" />
+
+<body>
+    <main class="content">
+        <div class="text-center">
+            <h1 class="title">Available species</h1>
+            <p>
+                <a href="/"
+                    ><span class="back-to-the-model">To prediction</span></a
+                >
+            </p>
+        </div>
+        <div class="bird-classes-list">
+            <ul>
+                {% for index, label, scientific_name in bird_classes %}
+                <li>
+                    {{ label }} (
+                    <span class="prediction-scientific_name"
+                        >{{ scientific_name | lower }}</span
+                    >
+                    )
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}

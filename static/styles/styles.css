@@ -1,0 +1,171 @@
+body {
+    padding-top: 1rem;
+}
+
+.content {
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+    padding: 1.5rem 1.5rem;
+}
+
+.title {
+    font-size: 38px;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+}
+
+.center-title {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.sub-tile {
+    font-size: 1.2rem;
+    padding-bottom: 1.6rem;
+}
+
+.demo-text {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: #5b0888;
+    filter: saturate(50%);
+}
+
+.blockquote {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blockquote-footer {
+    padding-top: 1.4rem;
+    font-size: 0.8rem;
+}
+
+/* important component to prevent the typing text going up and down */
+#typing-text {
+    min-height: 1.5em;
+    /* Adjust to match the font size of the text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    /* Ensure a consistent line height */
+}
+
+.form .mb-5 {
+    margin-bottom: 1rem !important;
+}
+
+.form .btn {
+    font-weight: bold;
+}
+
+.form {
+    padding-top: 1.2rem;
+    max-width: 280px;
+    margin: auto;
+}
+
+.default-img {
+    padding-top: 3rem;
+}
+
+.result {
+    text-align: center;
+}
+
+.prediction-common_name {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.prediction-scientific_name {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+.bottom-text {
+    position: flex; /* or absolute, depending on your layout */
+    padding-top: 1.5rem;
+    padding-bottom: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.execution_time_class {
+    font-size: 1rem;
+}
+
+/* Typing Effect Styles */
+#typing-text {
+    display: inline;
+    border-right: 0.15em solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bird-classes-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bird-classes-list li {
+    background-color: #f0f0f0;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.bird-classes-list li:hover {
+    background-color: #e0e0e0;
+}
+
+/* animation handling */
+.loading-animation-hidden {
+    display: none;
+}
+
+.loading-animation-visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.animation {
+    padding-top: 1.5rem;
+}
+
+.image-padding {
+    padding: 1rem;
+}
+
+/* new styles for smaller screens */
+@media (max-width: 767px) {
+    .demo-text {
+        position: static;
+        display: block;
+        transform: none;
+        margin-top: -0.5rem;
+        margin-bottom: 0.5rem;
+        right: auto;
+        top: auto;
+    }
+
+    .center-title {
+        display: inline-block;
+    }
+}

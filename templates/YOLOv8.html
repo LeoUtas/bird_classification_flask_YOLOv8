@@ -1,0 +1,94 @@
+{% extends "base.html" %} {% block content %}
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+/>
+<link href="/static/styles/styles.css" rel="stylesheet" />
+<body>
+    <main class="content">
+        <div>
+            <div class="center-title">
+                <h1 class="title">Bird classification</h1>
+                <span class="demo-text">DEMO</span>
+            </div>
+            <div class="center-title sub-tile">YOLOv8</div>
+
+            <blockquote class="blockquote text-center">
+                <p id="typing-text"></p>
+                <footer class="blockquote-footer">George Box</footer>
+            </blockquote>
+        </div>
+
+        <form
+            method="post"
+            action="/YOLOv8"
+            enctype="multipart/form-data"
+            class="form"
+        >
+            <div class="mb-5">
+                <input type="file" class="form-control" name="image" required />
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Make prediction
+            </button>
+        </form>
+
+        <!-- make animation -->
+        <div id="loading-animation" class="hidden animation">
+            <iframe
+                src="https://giphy.com/embed/l0HlAgJTVaAPHEGdy"
+                width="360"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+            ></iframe>
+            <p>give me a sec ...</p>
+        </div>
+
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="result text-center mt-5">
+            {% if messages[1]|float < 0.6 %}
+            <img src="{{ messages[0] }}" width="360" />
+            <h5 class="bottom-text">
+                I can't classify the object in the uploaded image. Please note
+                that I can only classify a bird in the 524 species I was trained
+                on, as described below.
+            </h5>
+            {% else %}
+            <img src="{{ messages[0] }}" width="360" />
+            <h5 class="prediction-common_name">
+                Common name:
+                <span class="prediction-common_name">{{ messages[2] }}</span>
+            </h5>
+            <h5 class="prediction-scientific_name">
+                Scientific name:
+                <span class="prediction-scientific_name"
+                    >{{ messages[3] | lower }}</span
+                >
+            </h5>
+            <h5 class="execution_time_class">Probability: {{ messages[1] }}</h5>
+            <h5 class="execution_time_class">
+                Execution time: {{ messages[4] | lower }} s
+            </h5>
+            {% endif %}
+        </div>
+        {% endif %} {% endwith %}
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/script.js"></script>
+
+    <p class="bottom-text">
+        This AI model is an application of the
+        <a href="https://docs.ultralytics.com/tasks/classify/" target="_blank"
+            >YOLOv8</a
+        >. The model can classify birds in the list of
+        <a href="/bird-classes">524</a> species it was trained on. The image
+        chosen for classification should only contain one individual bird (e.g.,
+        <a href="test-imgs">test images</a>). The model achieves an accuracy of
+        > 98%, which is decent; however, it could be incorrect for various
+        reasons.
+    </p>
+</body>
+{% endblock %}
