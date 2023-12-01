@@ -11,7 +11,8 @@ sys.path.append(parent_path)
 
 from exception import CustomException
 from dataclasses import dataclass
-from tensorflow.keras.preprocessing import image
+
+# from tensorflow.keras.preprocessing import image
 import numpy as np
 from ultralytics import YOLO
 
@@ -19,7 +20,6 @@ from ultralytics import YOLO
 @dataclass
 class Data_ingestion_path_config:
     """
-
     This class is to handle the path directing to where the images located.
 
     """
@@ -31,7 +31,6 @@ class Data_ingestion_path_config:
 
 class Data_ingestion:
     """
-
     This class is to make a pipeline to the location where uploaded images are located and retrieved them, then preprocess making them ready as input going to the prediction.
 
     """
@@ -49,7 +48,6 @@ class Data_ingestion:
 
     def make_data_in(self):
         """
-
         This function goes to the location of uploaded images, get the image and preprocess it making it ready for using in prediction.
 
         """

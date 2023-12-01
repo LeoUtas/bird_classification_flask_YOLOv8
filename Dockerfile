@@ -22,12 +22,9 @@ RUN apt-get update && apt-get install -y \
 # Install the CPU-only version of PyTorch
 RUN pip install torch==2.1.0 torchvision==0.16.0 --index-url https://download.pytorch.org/whl/cpu
 
+
 # Install ultralytics
 RUN pip install ultralytics==8.0.208
-
-
-# Install tensorflow cpu
-RUN pip install tensorflow==2.13.0
 
 
 COPY requirements.txt .

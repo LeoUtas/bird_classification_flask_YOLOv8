@@ -10,22 +10,27 @@
     <li><a href="#the-design">The design</a></li>
     <li><a href="#how-to-use-the-source-code">How to use the source code</a></li>
     <li><a href="#the-bottom-line">The Bottom Line</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ol>
 </details>
 
 ### Introduction
 
-This repository contains the source code for a web application that classifies bird species using a deep learning model developed from YOLOv8. It is capable of identifying 524 different bird species, the app provides a user-friendly interface for easy image uploads and rapid species identification.
+This repository contains the source code for a web application that classifies bird species using a deep learning model developed from the architecture of You Only Look Once framework (i.e., YOLOv8). It is capable of identifying 524 different bird species, the app provides a user-friendly interface for easy image uploads and rapid species identification.
 
 ### Demo
 
 <p align="center">
   <a href="Video URL">
-    <img src="/video/bird-app524.gif" width="480" alt="Alt text for the image"/>
+    <img src="/video/bird-app-yolov8.gif" width="480" alt="Alt text for the image"/>
   </a>
 </p>
 
 ### Technical tools
+
+The orginal paper of You Only Look Once YOLO architecture <a href="https://arxiv.org/pdf/1506.02640.pdf">(Redmon, J. et al., 2016)</a>.
+
+The application documentation of <a href="https://docs.ultralytics.com/"> YOLOv8 </a> by Ultralytics.
 
 -   Pytorch
 -   YOLOv8
@@ -51,7 +56,7 @@ This project is a 2-stage model application:
 I developed a bird classification web application with three distinct approaches:
 
 -   A 2-stage model using YOLOv8 architecture, <a href="https://github.com/LeoUtas/bird_classification_flask_YOLOv8.git">(source code)</a>;
--   A 2-stage model using YOLO8 and MobileNet architectures, <a href="#introduction">(source code)</a>; and
+-   A 1-stage model using MobileNet architectures, <a href="#introduction">(source code)</a>; and
 -   A combination of the YOLOv8 and MobileNet architectures, <a href="#introduction">(source code)</a>
 
 After evaluating these models, I decided to use only the MobileNet architecture for the <a href="https://bird-classification524-b310a542793a.herokuapp.com/"> final web application </a>. While the YOLO8n object detection adds functionality, it's not essential for this task and may slow down performance. However, in scenarios where object measurement is crucial, such as detecting and measuring fish samples, incorporating an object detector like YOLO8n is highly beneficial.
@@ -72,7 +77,7 @@ After evaluating these models, I decided to use only the MobileNet architecture 
     -   Run the Docker Container (once the docker image is built, you will run a docker container, map it to the port 5000)
 
     ```cmd
-    docker run -p 5000:5000 -v $(pwd):/app --name <name of the container> <name of the app>
+    docker run -p 5000:5000 -v "$(PWD):/app" --name <name of the container> <name of the app>
     ```
 
 -   Run the app.py on the docker container
@@ -112,3 +117,7 @@ I'm thrilled to share it with you all! Dive in and enjoy exploring its features.
 
 Best,
 Hoang Ng
+
+### Reference
+
+Redmon, J. et al., 2016. You Only Look Once: Unified, Real-Time Object Detection. In 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). pp. 779–788.
