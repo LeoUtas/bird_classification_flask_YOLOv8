@@ -65,7 +65,18 @@ This repository contains the source code for a web application that classifies b
     app.run(host="0.0.0.0", port=port, debug=False)  # define 0.0.0.0 for Docker
     ```
 
-    -   That's everything, you're good to go.
+    -   For windows users:
+
+    ```cmd
+    python app.py
+    ```
+
+    -   For MacOS and Linux users
+
+    ```bash
+    python3 app.py
+    ```
+
     -   Stop running the container when you're done:
 
     ```cmd
