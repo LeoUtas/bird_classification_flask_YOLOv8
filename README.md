@@ -9,7 +9,6 @@
     <li><a href="#data-source">Data source</a></li>
     <li><a href="#the-design">The design</a></li>
     <li><a href="#how-to-use-the-source-code">How to use the source code</a></li>
-    <li><a href="#the-bottom-line">The Bottom Line</a></li>
     <li><a href="#reference">Reference</a></li>
   </ol>
 </details>
@@ -110,8 +109,6 @@ After evaluating these models, I decided to use only the MobileNet architecture 
     ```cmd
     docker stop <name of the container>
     ```
-
-### The bottom line
 
 I'm thrilled to share it with you all! Dive in and enjoy exploring its features. A big thank you for your interest and for journeying this far with me. Wishing you a fantastic day ahead!
 
