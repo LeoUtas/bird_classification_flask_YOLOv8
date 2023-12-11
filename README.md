@@ -62,7 +62,7 @@ After evaluating these models, I decided to use only the MobileNet architecture 
 
 ### How to use the source code
 
-##### Test the source code
+##### use the source code
 
 -   Fork/clone this repository (https://github.com/LeoUtas/bird_classification_flask_YOLOv8.git)
 -   Get the docker container ready
