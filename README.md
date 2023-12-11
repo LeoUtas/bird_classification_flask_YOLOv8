@@ -62,9 +62,9 @@ After evaluating these models, I decided to use only the MobileNet architecture 
 
 ### How to use the source code
 
-##### Using the source code for development
+##### Test the source code
 
--   Fork this repository (https://github.com/LeoUtas/bird_classification_flask_YOLOv8.git)
+-   Fork/clone this repository (https://github.com/LeoUtas/bird_classification_flask_YOLOv8.git)
 -   Get the docker container ready
 
     -   Run docker build (name the app whatever you want on your local machine, and please note that it might take a while for installing all the required dependencies to your local docker image)
@@ -77,38 +77,6 @@ After evaluating these models, I decided to use only the MobileNet architecture 
 
     ```cmd
     docker run -p 5000:5000 -v "$(PWD):/app" --name <name of the container> <name of the app>
-    ```
-
-
--   Run the app.py on the docker container
-
-    -   For windows users
-
-    ```cmd
-    python app.py
-    ```
-
-    -   For MacOS and Linux users
-
-    ```bash
-    python3 app.py
-    ```
-
-    -   Change debug=False to True in app.py for development (it's crucial to asign debug=True for the ease of tracking bugs when customizing the code)
-
-    ```python
-    # the last chunk of code in the app.py
-    if __name__ == "__main__":
-    port = int(
-        os.environ.get("PORT", 5000)
-    )  # define port so we can map container port to localhost
-    app.run(host="0.0.0.0", port=port, debug=False)  # define 0.0.0.0 for Docker
-    ```
-
--   Stop running the container when you're done:
-
-    ```cmd
-    docker stop <name of the container>
     ```
 
 I'm thrilled to share it with you all! Dive in and enjoy exploring its features. A big thank you for your interest and for journeying this far with me. Wishing you a fantastic day ahead!
