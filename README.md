@@ -70,13 +70,13 @@ After evaluating these models, I decided to use only the MobileNet architecture 
     -   Run docker build (name the app whatever you want on your local machine, and please note that it might take a while for installing all the required dependencies to your local docker image)
 
     ```cmd
-    docker build -t <name of the app> .
+    docker build -t <name of the docker image> .
     ```
 
     -   Run the Docker Container (once the docker image is built, you will run a docker container, map it to the port 5000)
 
     ```cmd
-    docker run -p 5000:5000 -v "$(PWD):/app" --name <name of the container> <name of the app>
+    docker run -p 5000:5000 -v "$(PWD):/app" --name <name of the container> <name of the docker image>
     ```
 
 I'm thrilled to share it with you all! Dive in and enjoy exploring its features. A big thank you for your interest and for journeying this far with me. Wishing you a fantastic day ahead!
