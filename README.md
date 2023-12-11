@@ -79,11 +79,6 @@ After evaluating these models, I decided to use only the MobileNet architecture 
     docker run -p 5000:5000 -v "$(PWD):/app" --name <name of the container> <name of the app>
     ```
 
-    -   Or run the Docker Container (without mapping it to the port 5000)
-
-    ```cmd
-    docker run -v "$(PWD):/app" --name <name of the container> <name of the docker image>
-    ```
 
 -   Run the app.py on the docker container
 
