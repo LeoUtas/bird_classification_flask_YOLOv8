@@ -7,7 +7,6 @@
     <li><a href="#demo">Demo</a></li>
     <li><a href="#technical-tools">Technical Tools</a></li>
     <li><a href="#data-source">Data source</a></li>
-    <li><a href="#the-design">The design</a></li>
     <li><a href="#how-to-use-the-source-code">How to use the source code</a></li>
     <li><a href="#reference">Reference</a></li>
   </ol>
@@ -15,7 +14,30 @@
 
 ### Introduction
 
-This repository contains the source code for a web application that classifies bird species using a deep learning model developed from the architecture of You Only Look Once framework (i.e., YOLOv8). It is capable of identifying 524 different bird species, the app provides a user-friendly interface for easy image uploads and rapid species identification.
+<ul style="padding-left: 20px; list-style-type: circle;">
+        <li>The project includes 4 repositories:
+            <ul>                
+                <li>
+                <a href="https://github.com/LeoUtas/bird_classification_research.git" style="text-decoration: none; color: #3498db;">Bird classification research</a>
+                </li>
+                <li>
+                <a href="https://github.com/LeoUtas/bird_classification_flask_MobileNet.git" style="text-decoration: none; color: #3498db;">Bird classification web application using MobileNet model</a>
+                </li>
+                <li>
+                <a href="https://github.com/LeoUtas/bird_classification_flask_YOLOv8.git" style="text-decoration: none; color: #3498db;">Bird classification web application using YOLOv8 model</a>
+                </li>
+                <li>
+                <a href="https://github.com/LeoUtas/bird_classification_flask_2models.git">Bird classification web app using MobileNet and YOLOv8 for better comparing model performances</a>
+                </li>                                
+            </ul>
+        </li>
+        <br>
+        <li>
+            I attempted to solve the task using 4 different tools (i.e., InceptionV3, MobileNetV1, MobileNetV2 and YOLOv8). After evaluating performance metrics and processing speed, MobileNetV1 was chosen as the most suitable model for this task <a href="https://bird-classification524-b310a542793a.herokuapp.com/">(visit the live demo)</a>.
+        </li>        
+    </ul>
+
+This repository offers source code for a web application using YOLOv8.
 
 ### Demo
 
@@ -44,21 +66,6 @@ The application documentation of <a href="https://docs.ultralytics.com/"> YOLOv8
 ### Data source
 
 This project utilizes a bird species dataset provided by <a href="https://www.kaggle.com/gpiosenka">Gerry</a>, available on Kaggle. For detailed information, visit <a href="https://www.kaggle.com/datasets/gpiosenka/100-bird-species/data"> birds 525 species- image classification </a>.
-
-### The design
-
-This project is a 2-stage model application:
-
--   Stage 1: Using an object detection model (i.e., YOLO8n) to detect the bird in a given image;
--   Stage 2: Using a customized classification model built upon the YOLOv8 classification framework (i.e., YOLOv8n-cls) to classify the bird species.
-
-I developed a bird classification web application with three distinct approaches:
-
--   A 2-stage model using YOLOv8 architecture, <a href="https://github.com/LeoUtas/bird_classification_flask_YOLOv8.git">(source code)</a>;
--   A 1-stage model using MobileNet architectures, <a href="https://github.com/LeoUtas/bird_classification_flask_MobileNet.git">(source code)</a>; and
--   A combination of the YOLOv8 and MobileNet architectures, <a href="https://github.com/LeoUtas/bird_classification_flask_2models.git">(source code)</a>
-
-After evaluating these models, I decided to use only the MobileNet architecture for the <a href="https://bird-classification524-b310a542793a.herokuapp.com/"> final web application </a>. While the YOLO8n object detection adds functionality, it's not essential for this task and may slow down performance. However, in scenarios where object measurement is crucial, such as detecting and measuring fish samples, incorporating an object detector like YOLO8n is highly beneficial.
 
 ### How to use the source code
 
